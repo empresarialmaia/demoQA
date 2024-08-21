@@ -6,7 +6,7 @@ Feature: Preenchimento dos campos formulario
   PARA enviar as informacoes com sucesso
   
   Background: Como usuario do sistema
-    Given que esteja na tela de principal "https://demoqa.com/"
+    Given que esteja na tela de principal 
 
   @positivo
   Scenario: preencher o formulario com sucesso

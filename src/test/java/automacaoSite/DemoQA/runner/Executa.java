@@ -2,6 +2,8 @@ package automacaoSite.DemoQA.runner;
 
 import org.junit.runner.RunWith;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import automacaoSite.DemoQA.driver.Driver;
 import io.cucumber.junit.Cucumber;
@@ -12,7 +14,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
 		features = "src/test/resources/features",
 		glue = "automacaoSite.DemoQA.steps",
-		tags = "@positivo",
+		tags = "@regressivo",
 		dryRun = false,
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE,
@@ -23,13 +25,22 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 public class Executa extends Driver {
 	
-	public static void iniciarTest(String url) {
-		driver = new ChromeDriver();
+	public static void abrirNavegador(String tipo) {
+		if(tipo.equalsIgnoreCase("Chrome")){
+		driver = new ChromeDriver();	
+		}else if(tipo.equalsIgnoreCase("Edge")) {
+			driver = new EdgeDriver();	
+		}else if(tipo.equalsIgnoreCase("Firefox")) {
+			driver = new FirefoxDriver();
+		}
+		
 		driver.manage().window().maximize();
-		driver.get(url);
+		driver.get("https://demoqa.com/");
 	}
 	
-	public static void encerrarTeste() {
+	
+	public static void fecharNavegador() {
+		if(driver!= null)
 		driver.quit();
 	}
 	

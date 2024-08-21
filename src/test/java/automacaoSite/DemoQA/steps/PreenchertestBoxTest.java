@@ -2,6 +2,7 @@ package automacaoSite.DemoQA.steps;
 
 import automacaoSite.DemoQA.page.TextBoxPage;
 import automacaoSite.DemoQA.runner.Executa;
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,10 +10,15 @@ import io.cucumber.java.en.When;
 public class PreenchertestBoxTest {
 
 	TextBoxPage page = new TextBoxPage();
+	
+	@After
+	public void encerrarTeste() {
+		Executa.fecharNavegador();
+	}
 
-	@Given("que esteja na tela de principal {string}")
-	public void queEstejaNaTelaDePrincipal(String url) {
-		Executa.iniciarTest(url);
+	@Given("que esteja na tela de principal")
+	public void queEstejaNaTelaDePrincipal() {
+		Executa.abrirNavegador("chrome");
 
 	}
 
@@ -38,7 +44,7 @@ public class PreenchertestBoxTest {
 		page.enviarFormulario();
 		page.infomacoesValidacaoFormulario("Name:Eduardo", "Email:eduardo.eduardo@gmail.com", "Current Address :teste1",
 				"Permananet Address :teste2");
-		Executa.encerrarTeste();
+		
 
 	}
 
