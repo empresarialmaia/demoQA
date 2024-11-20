@@ -10,8 +10,7 @@ public class TextBoxPage {
 	 By email = By.id("userEmail");
 	 By currentAddress = By.id("currentAddress");
 	 By permanentAddress = By.id("permanentAddress");
-	 By submit = By.id("submit");
-		
+	 By submit = By.id("submit");		
      By name = By.xpath("//p[@id='name']");	
      By emailEnviado = By.xpath("//p[@id='email']");	
      By currentA = By.xpath("//p[@id='currentAddress']");	

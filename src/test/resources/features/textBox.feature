@@ -1,5 +1,5 @@
 
-@regressivoFormulario @regressivo
+ @regressivo
 Feature: Preenchimento dos campos formulario
   COMO usuario do sistema
   QUERO inserir os dados necessarios
@@ -8,7 +8,7 @@ Feature: Preenchimento dos campos formulario
   Background: Como usuario do sistema
     Given que esteja na tela de principal 
 
-  @positivo
+  @positivo @preencherComSucesso
   Scenario: preencher o formulario com sucesso
     When clicar no menu elements
     And clicar em text box

@@ -18,7 +18,7 @@ Este projeto de automação requer as seguintes tecnologias:
 ## Clonando o repositório
  
 Abra o terminal ou prompt de comando em seu computador, e utilize o comando **git clone** seguido da **URL** do repositório.
-- **git clone https://github.com/empresarialmaia/DemoQA.git**
+- **git clone https://github.com/empresarialmaia/demoQA.git**
 - **cd DemoQA**
  
 ## Como executar os testes
